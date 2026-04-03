@@ -1,65 +1,203 @@
 import Image from "next/image";
+import Link from "next/link";
+import {
+  BUSINESS,
+  MENU_ITEMS,
+  FEATURED_COUNT,
+  WHY_US,
+  SITE_URL,
+} from "@/lib/constants";
+import OrderAndWhatsApp from "@/components/OrderAndWhatsApp";
+import SiirSection from "@/components/SiirSection";
 
-export default function Home() {
+export const metadata = {
+  title: {
+    absolute: "Şifah Çorba & Haşlama | 7/24 Açık Çorbacı Bağcılar",
+  },
+  description:
+    "Bağcılar’da 7/24 açık Şifah Çorba & Haşlama. Kelle paça, işkembe, tuzlama ve daha fazlası.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    url: SITE_URL,
+    title: "Şifah Çorba & Haşlama | 7/24 Açık Çorbacı Bağcılar",
+    description:
+      "Bağcılar’da 7/24 açık Şifah Çorba & Haşlama. Kelle paça, işkembe, tuzlama ve daha fazlası.",
+  },
+  twitter: {
+    title: "Şifah Çorba & Haşlama | 7/24 Açık Çorbacı Bağcılar",
+    description:
+      "Bağcılar’da 7/24 açık Şifah Çorba & Haşlama. Kelle paça, işkembe, tuzlama ve daha fazlası.",
+  },
+};
+
+const featured = MENU_ITEMS.slice(0, FEATURED_COUNT);
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="flex flex-1 flex-col">
+      <section
+        className="relative overflow-hidden border-b border-[#d4af37]/20 bg-gradient-to-br from-[#4a0a0d] via-[#6e0f14] to-[#3d080a] text-amber-50"
+        aria-labelledby="hero-heading"
+      >
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-20">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-[#d4af37]/95">
+              Bağcılar · 7/24 açık
+            </p>
+            <h1
+              id="hero-heading"
+              className="font-display mt-3 text-4xl font-bold leading-tight sm:text-5xl"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+              Şifa gibi sıcak, eski usul çorba ve haşlama
+            </h1>
+            <p className="mt-4 max-w-xl text-lg leading-relaxed text-amber-100/95">
+              Kelle paça, işkembe, tuzlama ve daha fazlası — doğal malzemelerle,
+              ustalıkla kaynatılmış lezzetler.
+            </p>
+            <div className="mt-8 space-y-6">
+              <OrderAndWhatsApp variant="prominent" />
+              <Link
+                href="/menu"
+                className="inline-flex items-center justify-center rounded-full border-2 border-[#d4af37]/50 px-8 py-3 text-base font-bold text-[#f5e6a8] transition hover:border-[#d4af37] hover:bg-white/5"
+              >
+                Menüyü Gör
+              </Link>
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] w-full max-lg:mx-auto max-lg:max-w-md">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/images/corba-1.jpg"
+              alt="Şifah Çorba & Haşlama — sıcak çorba kasesi"
+              fill
+              className="rounded-2xl object-cover shadow-2xl ring-2 ring-[#d4af37]/25"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
             />
-            Deploy Now
-          </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="mx-auto w-full max-w-6xl flex-1 px-4 py-14 sm:px-6"
+        aria-labelledby="featured-heading"
+      >
+        <h2
+          id="featured-heading"
+          className="font-display text-center text-3xl font-bold text-[#6e0f14] sm:text-4xl"
+        >
+          Öne çıkan çorbalar
+        </h2>
+        <p className="mx-auto mt-2 max-w-2xl text-center text-stone-600">
+          En çok tercih edilen lezzetlerimizden bir seçki. Tüm listeyi menü
+          sayfasında görebilirsiniz.
+        </p>
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.map((name) => (
+            <li
+              key={name}
+              className="overflow-hidden rounded-2xl border border-[#d4af37]/15 bg-white shadow-md transition hover:shadow-lg"
+            >
+              <div className="relative aspect-[16/10] w-full">
+                <Image
+                  src="/images/corba-1.jpg"
+                  alt={`${name} — Şifah Çorba`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-display text-lg font-bold text-[#6e0f14]">
+                  {name}
+                </h3>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-10 text-center">
+          <Link
+            href="/menu"
+            className="inline-flex rounded-full bg-[#d4af37] px-8 py-3 font-bold text-[#3d0a0c] shadow-md transition hover:bg-[#e8c547]"
+          >
+            Tüm menü
+          </Link>
+        </div>
+      </section>
+
+      <section
+        className="border-y border-[#d4af37]/15 bg-gradient-to-b from-amber-50/90 to-[#fff8f0] py-14"
+        aria-labelledby="why-heading"
+      >
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2
+            id="why-heading"
+            className="font-display text-center text-3xl font-bold text-[#6e0f14]"
+          >
+            Neden bizi seçmelisiniz?
+          </h2>
+          <ul className="mt-10 grid gap-8 sm:grid-cols-3">
+            {WHY_US.map(({ title, text }) => (
+              <li
+                key={title}
+                className="rounded-2xl border border-[#d4af37]/20 bg-white p-6 shadow-sm"
+              >
+                <h3 className="font-display text-xl font-bold text-[#8b4513]">
+                  {title}
+                </h3>
+                <p className="mt-2 text-stone-600">{text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <SiirSection />
+
+      <section
+        className="mx-auto w-full max-w-6xl flex-1 px-4 py-14 sm:px-6"
+        aria-labelledby="map-preview-heading"
+      >
+        <h2
+          id="map-preview-heading"
+          className="font-display text-3xl font-bold text-[#6e0f14]"
+        >
+          Bizi ziyaret edin
+        </h2>
+        <p className="mt-2 max-w-2xl text-stone-600">{BUSINESS.address}</p>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-[#d4af37]/20 shadow-lg ring-1 ring-black/5">
+          <iframe
+            title="Şifah Çorba & Haşlama konumu — Google Haritalar"
+            src={BUSINESS.mapsEmbedSrc}
+            width="600"
+            height="450"
+            className="aspect-video min-h-[280px] w-full border-0 sm:min-h-[360px]"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href={BUSINESS.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#6e0f14] px-4 py-2.5 text-sm font-bold text-white shadow-md transition hover:bg-[#4a0a0d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6e0f14] sm:px-5"
           >
-            Documentation
+            <svg
+              className="h-4 w-4 shrink-0"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden
+            >
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            Yol tarifi al
           </a>
+          <OrderAndWhatsApp variant="compact" />
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
