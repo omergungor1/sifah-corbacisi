@@ -40,14 +40,14 @@ export default function MenuPage() {
         </div>
 
         <ul className="mt-12 grid flex-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {MENU_ITEMS.map((name) => (
+          {MENU_ITEMS.map(({ name, image }) => (
             <li
               key={name}
               className="overflow-hidden rounded-2xl border border-[#d4af37]/15 bg-white shadow-md transition hover:shadow-lg"
             >
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src="/images/corba-1.jpg"
+                  src={image}
                   alt={`${name} — Şifah Çorba & Haşlama`}
                   fill
                   className="object-cover"

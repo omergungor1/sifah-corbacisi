@@ -94,14 +94,14 @@ export default function HomePage() {
           sayfasında görebilirsiniz.
         </p>
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((name) => (
+          {featured.map(({ name, image }) => (
             <li
               key={name}
               className="overflow-hidden rounded-2xl border border-[#d4af37]/15 bg-white shadow-md transition hover:shadow-lg"
             >
               <div className="relative aspect-[16/10] w-full">
                 <Image
-                  src="/images/corba-1.jpg"
+                  src={image}
                   alt={`${name} — Şifah Çorba`}
                   fill
                   className="object-cover"
