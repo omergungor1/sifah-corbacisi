@@ -22,8 +22,10 @@ body {
   font-family: var(--font-body), system-ui, sans-serif;
 }
 
+/* Başlıklar: Fraunces (layout.js) — yumuşak serif, kolay okuma */
 .font-display {
-  font-family: var(--font-display), Georgia, serif;
+  font-family: var(--font-display), "Georgia", ui-serif, serif;
+  font-feature-settings: "kern" 1, "liga" 1;
 }
 
 .font-body {

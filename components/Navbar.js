@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BUSINESS } from "@/lib/constants";
 import { NAV_LINKS } from "@/lib/navLinks";
+import PhoneIcon from "@/components/icons/PhoneIcon";
 
 export default function Navbar() {
   return (
@@ -39,8 +40,9 @@ export default function Navbar() {
         </nav>
         <a
           href={`tel:${BUSINESS.phoneTel}`}
-          className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#d4af37] px-4 py-2.5 text-xs font-bold text-[#3d0a0c] shadow-md transition hover:bg-[#e8c547] sm:text-sm"
+          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#d4af37] px-4 py-2.5 text-xs font-bold text-[#3d0a0c] shadow-md transition hover:bg-[#e8c547] sm:text-sm"
         >
+          <PhoneIcon className="h-4 w-4 shrink-0 sm:h-[1.125rem] sm:w-[1.125rem]" />
           Sipariş için hemen ara
         </a>
       </div>

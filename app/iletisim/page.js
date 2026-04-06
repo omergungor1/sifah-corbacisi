@@ -1,5 +1,6 @@
 import { BUSINESS, SITE_URL } from "@/lib/constants";
 import OrderAndWhatsApp from "@/components/OrderAndWhatsApp";
+import MapDirectionsLink from "@/components/MapDirectionsLink";
 
 export const metadata = {
   title: "İletişim",
@@ -68,7 +69,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <dt className="text-xs font-bold uppercase tracking-wide text-stone-500">
-                    Telefon
+                    Cep telefonu
                   </dt>
                   <dd className="mt-2">
                     <a
@@ -76,6 +77,19 @@ export default function ContactPage() {
                       className="text-xl font-bold text-[#6e0f14] underline-offset-2 hover:underline"
                     >
                       {BUSINESS.phoneDisplay}
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-bold uppercase tracking-wide text-stone-500">
+                    Sabit hat
+                  </dt>
+                  <dd className="mt-2">
+                    <a
+                      href={`tel:${BUSINESS.landlineTel}`}
+                      className="text-xl font-bold text-[#6e0f14] underline-offset-2 hover:underline"
+                    >
+                      {BUSINESS.landlineDisplay}
                     </a>
                   </dd>
                 </div>
@@ -94,14 +108,7 @@ export default function ContactPage() {
                   </dd>
                 </div>
               </dl>
-              <a
-                href={BUSINESS.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex w-fit rounded-full bg-[#d4af37] px-8 py-3.5 font-bold text-[#3d0a0c] shadow-md transition hover:bg-[#e8c547]"
-              >
-                Yol tarifi al
-              </a>
+              <MapDirectionsLink className="mt-8" />
             </section>
 
             <section

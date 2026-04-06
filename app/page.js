@@ -9,6 +9,7 @@ import {
 } from "@/lib/constants";
 import OrderAndWhatsApp from "@/components/OrderAndWhatsApp";
 import SiirSection from "@/components/SiirSection";
+import MapDirectionsLink from "@/components/MapDirectionsLink";
 
 export const metadata = {
   title: {
@@ -50,20 +51,14 @@ export default function HomePage() {
               id="hero-heading"
               className="font-display mt-3 text-4xl font-bold leading-tight sm:text-5xl"
             >
-              Şifa gibi sıcak, eski usul çorba ve haşlama
+              Gerçek lezzetin kaynadığı yer
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-amber-100/95">
-              Kelle paça, işkembe, tuzlama ve daha fazlası — doğal malzemelerle,
-              ustalıkla kaynatılmış lezzetler.
+              İstanbul’da çorbanın en sıcak hali. Her kaşıkta ustalık, her
+              tabakta şifa.
             </p>
-            <div className="mt-8 space-y-6">
+            <div className="mt-8">
               <OrderAndWhatsApp variant="prominent" />
-              <Link
-                href="/menu"
-                className="inline-flex items-center justify-center rounded-full border-2 border-[#d4af37]/50 px-8 py-3 text-base font-bold text-[#f5e6a8] transition hover:border-[#d4af37] hover:bg-white/5"
-              >
-                Menüyü Gör
-              </Link>
             </div>
           </div>
           <div className="relative aspect-[4/3] w-full max-lg:mx-auto max-lg:max-w-md">
@@ -179,22 +174,7 @@ export default function HomePage() {
           />
         </div>
         <div className="mt-8 flex flex-wrap items-center gap-3">
-          <a
-            href={BUSINESS.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#6e0f14] px-4 py-2.5 text-sm font-bold text-white shadow-md transition hover:bg-[#4a0a0d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6e0f14] sm:px-5"
-          >
-            <svg
-              className="h-4 w-4 shrink-0"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden
-            >
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-            </svg>
-            Yol tarifi al
-          </a>
+          <MapDirectionsLink />
           <OrderAndWhatsApp variant="compact" />
         </div>
       </section>

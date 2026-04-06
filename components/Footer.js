@@ -3,16 +3,23 @@ import { BUSINESS, SITE_URL } from "@/lib/constants";
 import { NAV_LINKS } from "@/lib/navLinks";
 import SocialPlaceholders from "@/components/SocialPlaceholders";
 
-const FOOTER_SLOGAN =
-  "Her kaşıkta şifa, her kasede gönül ısısı — kazandan sofraya, sofradan yüreğe.";
+/** Ana sayfa hero ile aynı mesaj */
+const FOOTER_SLOGAN_HEADING = "Gerçek lezzetin kaynadığı yer";
+const FOOTER_SLOGAN_TEXT =
+  "İstanbul'da çorbanın en sıcak hali. Her kaşıkta ustalık, her tabakta şifa.";
 
 export default function Footer() {
   return (
     <footer className="mt-auto border-t border-[#d4af37]/30 bg-[#4a0a0d] text-amber-50">
       <div className="mx-auto max-w-6xl space-y-10 px-4 py-12 sm:px-6 lg:space-y-12">
-        <p className="mx-auto max-w-2xl text-center font-display text-lg italic leading-relaxed text-[#f5e6a8] sm:text-xl">
-          {FOOTER_SLOGAN}
-        </p>
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="font-display text-xl font-bold leading-tight text-[#f5e6a8] sm:text-2xl">
+            {FOOTER_SLOGAN_HEADING}
+          </p>
+          <p className="mt-3 font-display text-base italic leading-relaxed text-amber-100/90 sm:text-lg">
+            {FOOTER_SLOGAN_TEXT}
+          </p>
+        </div>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -58,6 +65,12 @@ export default function Footer() {
             >
               {BUSINESS.phoneDisplay}
             </a>
+            <a
+              href={`tel:${BUSINESS.landlineTel}`}
+              className="mt-2 block text-base font-semibold text-amber-100/95 hover:text-[#d4af37]"
+            >
+              {BUSINESS.landlineDisplay}
+            </a>
             <p className="mt-3 text-sm text-amber-100/85">
               Çalışma:{" "}
               <span className="font-semibold text-white">{BUSINESS.hours}</span>
@@ -75,9 +88,6 @@ export default function Footer() {
           <div>
             <p className="text-xs font-bold uppercase tracking-wider text-[#d4af37]/90">
               Sosyal medya
-            </p>
-            <p className="mt-2 text-xs text-amber-100/60">
-              Hesaplar yakında eklenecek.
             </p>
             <div className="mt-4">
               <SocialPlaceholders />

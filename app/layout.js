@@ -1,14 +1,15 @@
-import { Merriweather, Nunito } from "next/font/google";
+import { Fraunces, Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingContactButtons from "@/components/FloatingContactButtons";
 import LocalBusinessJsonLd from "@/components/LocalBusinessJsonLd";
+import CourierDeliveryBanner from "@/components/CourierDeliveryBanner";
 import { BUSINESS, SITE_URL } from "@/lib/constants";
 
-const merriweather = Merriweather({
-  weight: ["400", "700"],
-  subsets: ["latin"],
+/** Başlıklar: sıcak, şık, çorba / esnaf sitesine uygun (Merriweather yerine) */
+const fraunces = Fraunces({
+  subsets: ["latin", "latin-ext"],
   variable: "--font-display",
   display: "swap",
 });
@@ -62,7 +63,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="tr"
-      className={`${merriweather.variable} ${nunito.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${nunito.variable} h-full antialiased`}
     >
       <body className="flex min-h-screen flex-col bg-[#fff8f0] font-body text-stone-900">
         <LocalBusinessJsonLd />
@@ -70,6 +71,7 @@ export default function RootLayout({ children }) {
         <div className="flex flex-1 flex-col pb-[5.5rem] md:pb-0">
           <Navbar />
           <div className="flex flex-1 flex-col">{children}</div>
+          <CourierDeliveryBanner />
           <Footer />
         </div>
       </body>

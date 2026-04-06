@@ -14,36 +14,36 @@ function FacebookIcon({ className }) {
   );
 }
 
-function XIcon({ className }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
+const INSTAGRAM_URL = "https://www.instagram.com/sifahcorbahaslama/";
 
-const items = [
-  { name: "Instagram", Icon: InstagramIcon },
-  { name: "Facebook", Icon: FacebookIcon },
-  { name: "X", Icon: XIcon },
-];
+const disabledClass =
+  "inline-flex h-11 w-11 cursor-not-allowed items-center justify-center rounded-full border border-[#d4af37]/30 bg-[#6e0f14]/40 text-[#d4af37]/50";
 
-/** Sosyal bağlantılar — şimdilik tıklanmıyor (yakında) */
+const instagramClass =
+  "inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d4af37]/50 bg-[#6e0f14]/60 text-[#d4af37] shadow-sm transition hover:border-[#d4af37] hover:bg-[#8b1820] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d4af37]";
+
+/** Instagram canlı; Facebook henüz pasif */
 export default function SocialPlaceholders() {
   return (
     <div className="flex flex-wrap gap-3">
-      {items.map(({ name, Icon }) => (
-        <span
-          key={name}
-          role="button"
-          tabIndex={-1}
-          aria-disabled="true"
-          aria-label={`${name} (yakında)`}
-          className="inline-flex h-11 w-11 cursor-not-allowed items-center justify-center rounded-full border border-[#d4af37]/30 bg-[#6e0f14]/40 text-[#d4af37]/50"
-        >
-          <Icon className="h-5 w-5" />
-        </span>
-      ))}
+      <a
+        href={INSTAGRAM_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={instagramClass}
+        aria-label="Instagram — Şifah Çorba & Haşlama"
+      >
+        <InstagramIcon className="h-5 w-5" />
+      </a>
+      <span
+        role="button"
+        tabIndex={-1}
+        aria-disabled="true"
+        aria-label="Facebook (yakında)"
+        className={disabledClass}
+      >
+        <FacebookIcon className="h-5 w-5" />
+      </span>
     </div>
   );
 }
