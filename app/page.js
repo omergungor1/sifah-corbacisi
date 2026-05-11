@@ -63,7 +63,7 @@ export default function HomePage() {
           </div>
           <div className="relative aspect-[4/3] w-full max-lg:mx-auto max-lg:max-w-md">
             <Image
-              src="/images/corba-1.jpg"
+              src="/images/dana-haslama.jpeg"
               alt="Şifah Çorba & Haşlama — sıcak çorba kasesi"
               fill
               className="rounded-2xl object-cover shadow-2xl ring-2 ring-[#d4af37]/25"
@@ -82,10 +82,10 @@ export default function HomePage() {
           id="featured-heading"
           className="font-display text-center text-3xl font-bold text-[#6e0f14] sm:text-4xl"
         >
-          Öne çıkan çorbalar
+          Çok beğenilen çorbalarımız
         </h2>
         <p className="mx-auto mt-2 max-w-2xl text-center text-stone-600">
-          En çok tercih edilen lezzetlerimizden bir seçki. Tüm listeyi menü
+          En çok tercih edilen lezzetlerimizden bir seçki. Tüm çorba listemizi menü
           sayfasında görebilirsiniz.
         </p>
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
