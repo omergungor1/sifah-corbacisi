@@ -63,7 +63,7 @@ export default function HomePage() {
           </div>
           <div className="relative aspect-[4/3] w-full max-lg:mx-auto max-lg:max-w-md">
             <Image
-              src="/images/dana-haslama.jpeg"
+              src="/menu/Yayla Çorbası.jpeg"
               alt="Şifah Çorba & Haşlama — sıcak çorba kasesi"
               fill
               className="rounded-2xl object-cover shadow-2xl ring-2 ring-[#d4af37]/25"
